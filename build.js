@@ -7,6 +7,10 @@ var Metalsmith = require('metalsmith'),
 Metalsmith(__dirname)
     .use(markdown())
     .use(readJSON())
-    .use(templates('handlebars'))
+    .use(templates({
+        engine: 'handlebars',
+        directory: 'templates',
+        default: 'page.hbt'
+    }))
     .destination('./build')
     .build(function (err) { if(err) console.log(err) })

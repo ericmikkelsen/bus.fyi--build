@@ -3,5 +3,6 @@
 build/
 node_modules/
 src/*
+data/*
 
 !src/index.md
